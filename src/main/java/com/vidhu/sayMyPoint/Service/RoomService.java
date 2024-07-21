@@ -32,9 +32,9 @@ public class RoomService {
     }
     public void createGroceryItems() {
             System.out.println("Data creation started...");
-            roomRepo.save(new Room("ets43235", "Ares", null));
-            roomRepo.save(new Room("ets11235", "Delta", null));
-            roomRepo.save(new Room("ets11233", "alpha", null));
+          //  roomRepo.save(new Room("ets43235", "Ares", null));
+          //  roomRepo.save(new Room("ets11235", "Delta", null));
+          //  roomRepo.save(new Room("ets11233", "alpha", null));
             System.out.println("Data creation complete...");
         }
 
