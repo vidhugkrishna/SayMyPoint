@@ -11,7 +11,7 @@ public class Room {
     String id;
     String roomName;
     List<Story> userStories;
-    String roomType;git
+    String roomType;
     String[] cards;
     boolean accessToAddStory;
     boolean votingStatus;
