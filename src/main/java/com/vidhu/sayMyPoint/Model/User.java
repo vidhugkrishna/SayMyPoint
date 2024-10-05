@@ -1,36 +1,39 @@
 package com.vidhu.sayMyPoint.Model;
 
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+
+import java.util.Collection;
+
 @Document
-public class User {
+@NoArgsConstructor
+public class User{
+
+    String username;
+
+
     @Id
     String Id;
-    String name;
+    String email;
     String token;
 
-    public User(String id, String token, String name) {
+    String password;
+
+    public User( String Id,String token, String username, String email, String password) {
         super();
-        Id = id;
+        this.Id = Id;
         this.token = token;
-        this.name = name;
+        this.username = username;
+        this.email = email;
+        this.password = password;
     }
 
-    public String getId() {
-        return Id;
-    }
 
-    public void setId(String id) {
-        Id = id;
-    }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String username) {
+        this.username = username;
     }
 
     public String getToken() {
@@ -42,4 +45,23 @@ public class User {
     }
 
 
+
+
+    public String getPassword() {
+        return password;
+    }
+
+
+    public String getUsername() {
+        return username;
+    }
+
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

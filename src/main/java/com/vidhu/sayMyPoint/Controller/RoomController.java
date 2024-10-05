@@ -4,6 +4,8 @@ import com.vidhu.sayMyPoint.Model.Room;
 import com.vidhu.sayMyPoint.Model.Story;
 import com.vidhu.sayMyPoint.Service.RoomService;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,21 +30,23 @@ public class RoomController {
 //        return roomService.addUserStory(story);
 //    }
 
-    @PostMapping("/addMockRoom")
-    public void createGroceryItems(){
-        roomService.createGroceryItems();
-    }
+
 
     @GetMapping("/getAll")
     public List<Room> getRooms(){
         return roomService.getAll();
     }
 
-    @PostMapping("/addRoom")
-    public Room addRoom(@RequestBody Room room){
-        return roomService.addRoom(room);
+//    @GetMapping("/joinRoom")
+//    public Optional<Room> joinRooms(@RequestParam String id){
+//        return roomService.joinAndGetRoomId(id);
+//    }
 
-    }
+//    @PostMapping("/addRoom")
+//    public Room addRoom(@RequestBody Room room){
+//        //return roomService.addRoom(room);
+//
+//    }
 
     @DeleteMapping("/delete/{roomId}")
     public List<Room> deleteRoom(@PathVariable String roomId){
@@ -50,6 +54,13 @@ public class RoomController {
         roomService.deleteRoom(roomId);
         return getRooms();
     }
+
+//    @PostMapping("/addStory")
+//    public Room addUserStoryToRoom(@RequestBody Story story){
+//        System.out.println("inside controller ");
+//
+//        return roomService.addStory(story);
+//    }
 
 
 

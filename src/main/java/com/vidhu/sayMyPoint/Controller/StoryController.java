@@ -11,13 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class StoryController {
 
-    @Autowired
-    private StoryService storyService;
 
-    @PostMapping("addStory")
-    public String addStory(@RequestBody Story story){
-        System.out.println(story.toString()+ "did we received the object");
-        return storyService.validateAndAddStory(story);
 
-    }
+//    @PostMapping("addStory")
+//    public String addStory(@RequestBody Story story){
+//        System.out.println(story.toString()+ "did we received the object");
+//        return storyService.validateAndAddStory(story);
+//
+//    }
 }

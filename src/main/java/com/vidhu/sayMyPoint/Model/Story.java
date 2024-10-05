@@ -6,9 +6,17 @@ import org.springframework.stereotype.Component;
 public class Story {
 
     String storyDetail;
-    int vote;
+    String[] vote;
     String roomID;
 
+    public Story(String storyDetail, String[] vote, String roomID) {
+        this.storyDetail = storyDetail;
+        this.vote = vote;
+        this.roomID = roomID;
+    }
+
+    public Story() {
+    }
 
 
     @Override
@@ -27,11 +35,11 @@ public class Story {
         this.storyDetail = storyDetail;
     }
 
-    public int getVote() {
+    public String[] getVote() {
         return vote;
     }
 
-    public void setVote(int vote) {
+    public void setVote(String[] vote) {
         this.vote = vote;
     }
 

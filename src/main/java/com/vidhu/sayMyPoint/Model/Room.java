@@ -1,5 +1,7 @@
 package com.vidhu.sayMyPoint.Model;
 
+import lombok.Data;
+import lombok.experimental.SuperBuilder;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.stereotype.Component;
@@ -16,6 +18,22 @@ public class Room {
     boolean accessToAddStory;
     boolean votingStatus;
     boolean voteRevealedAtEnd;
+
+    public String getCurrentStory() {
+        return currentStory;
+    }
+
+    public void setCurrentStory(String currentStory) {
+        this.currentStory = currentStory;
+    }
+
+    String currentStory;
+
+    String[] users;
+
+    public Room() {
+
+    }
 
     public String getRoomType() {
         return roomType;
@@ -63,7 +81,7 @@ public class Room {
 
 
 
-    public Room(String id, String roomName, List<Story> userStories, String roomType, String[] cards, boolean accessToAddStory, boolean skippingConfirmation, boolean voteRevealedAtEnd) {
+    public Room(String id, String roomName, List<Story> userStories, String roomType, String[] cards, boolean accessToAddStory, boolean skippingConfirmation, boolean voteRevealedAtEnd, String[] users, String currentStory) {
         super();
         this.id = id;
         this.roomName = roomName;
@@ -73,6 +91,8 @@ public class Room {
         this.accessToAddStory = accessToAddStory;
         this.votingStatus = skippingConfirmation;
         this.voteRevealedAtEnd = voteRevealedAtEnd;
+        this.users = users;
+        this.currentStory = currentStory;
     }
 
     public String getId() {
@@ -93,8 +113,8 @@ public class Room {
 
     @Override
     public String toString() {
-        return "Room{" +
-                "roomName='" + roomName + '\'' +
+        return "{" +
+                "roomName:'" + roomName + '\'' +
                 '}';
     }
 
@@ -104,5 +124,13 @@ public class Room {
 
     public void setUserStories(List<Story> userStories) {
         this.userStories = userStories;
+    }
+
+    public String[] getUsers() {
+        return users;
+    }
+
+    public void setUsers(String[] users) {
+        this.users = users;
     }
 }
